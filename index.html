@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task Reminders</title>
+
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Daily Task Reminders</h1>
+        <p>Plan your day. Track your work. Stay organised.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Simple demo login -->
+        <div class="card" id="loginBox">
+            <h2>Welcome!</h2>
+            <p>Enter your name to open your task dashboard.</p>
+            <input type="text" id="userName" placeholder="Enter your name">
+            <button onclick="login()">Continue</button>
+            <p class="small-text">This is a simple classroom demo login. It does not use a secure server.</p>
+        </div>
+
+        <!-- Main website -->
+        <div id="app">
+            <div class="card">
+                <h2>Hello, <span id="displayName"></span>!</h2>
+                <button onclick="logout()">Log out</button>
+            </div>
+
+            <div class="card">
+                <h2>Dashboard</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <p>Total Tasks</p>
+                        <h2 id="totalCount">0</h2>
+                    </div>
+                    <div class="stat">
+                        <p>Pending</p>
+                        <h2 id="pendingCount">0</h2>
+                    </div>
+                    <div class="stat">
+                        <p>In Progress</p>
+                        <h2 id="progressCount">0</h2>
+                    </div>
+                    <div class="stat">
+                        <p>Completed</p>
+                        <h2 id="completedCount">0</h2>
+                    </div>
+                </div>
+
+                <h3>Overall Progress</h3>
+                <div class="progress-background">
+                    <div id="progressBar"></div>
+                </div>
+                <p id="progressText" class="small-text">0% completed</p>
+            </div>
+
+            <div class="card">
+                <h2 id="formHeading">Add a New Task</h2>
+                <input type="text" id="taskTitle" placeholder="Task name">
+                <input type="date" id="taskDate">
+
+                <select id="taskCategory">
+                    <option value="Study">Study</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <select id="taskPriority">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium">Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+
+                <select id="taskStatus">
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+
+                <button onclick="saveTask()" id="saveButton">Add Task</button>
+                <button onclick="clearForm()" id="cancelButton" style="display:none;">Cancel Edit</button>
+            </div>
+
+            <div class="card">
+                <h2>Your Tasks</h2>
+                <input type="text" id="searchBox" placeholder="Search tasks..." oninput="showTasks()">
+
+                <select id="filterStatus" onchange="showTasks()">
+                    <option value="All">All Statuses</option>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+
+                <select id="sortTasks" onchange="showTasks()">
+                    <option value="date">Sort by Due Date</option>
+                    <option value="priority">Sort by Priority</option>
+                    <option value="name">Sort by Name</option>
+                </select>
+
+                <div id="taskList"></div>
+            </div>
+        </div>
+    </div>
+
+        <script src="script.js"></script>
+</body>
+</html>

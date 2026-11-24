@@ -1,0 +1,133 @@
+/* Basic page design */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f4f7;
+            margin: 0;
+            color: #222;
+        }
+
+        header {
+            background-color: #3446a8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 25px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #00000012;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 5px 3px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #2439c0;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #263681;
+        }
+
+        .delete-button {
+            background-color: #d94343;
+        }
+
+        .delete-button:hover {
+            background-color: #aa2929;
+        }
+
+        .stats {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            flex: 1;
+            min-width: 130px;
+            background-color: #eef0ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat h2 {
+            margin: 5px;
+            color: #3446a8;
+        }
+
+        .task {
+            border-left: 5px solid #3446a8;
+            padding: 12px;
+            margin: 12px 0;
+            background-color: #f8f9ff;
+            border-radius: 5px;
+        }
+
+        .task h3 {
+            margin: 0 0 8px;
+        }
+
+        .task p {
+            margin: 5px 0;
+        }
+
+        .task-actions {
+            margin-top: 10px;
+        }
+
+        .completed {
+            border-left-color: #269653;
+            opacity: 0.75;
+        }
+
+        .small-text {
+            color: #666;
+            font-size: 13px;
+        }
+
+        #app, #loginBox {
+            display: none;
+        }
+
+        .progress-background {
+            background-color: #ddd;
+            height: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #progressBar {
+            background-color: #269653;
+            height: 12px;
+            width: 0%;
+        }
+
+        @media (max-width: 600px) {
+            input, select {
+                width: 95%;
+                box-sizing: border-box;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
